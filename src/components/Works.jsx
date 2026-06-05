@@ -1,0 +1,173 @@
+import React from "react";
+import { Link } from "react-router-dom"; 
+// Import the official coding brand icons
+import { 
+  SiGithub,
+  SiPython,
+  SiCplusplus,
+  SiReact,
+  SiNodedotjs,
+  SiExpress,
+  SiMongodb,
+  SiScikitlearn,
+  SiPandas,
+  SiFastapi,
+  SiNextdotjs,
+  SiTypescript,
+  SiTailwindcss,
+  SiPostgresql
+} from "react-icons/si";
+// SimpleIcons only has brands, so we use a standard Feather icon for the "Live Preview" arrow
+import { FiExternalLink } from "react-icons/fi";
+
+// Projects updated with their respective SimpleIcons
+const featuredProjects = [
+  {
+    title: "Autonomous Mobile Robot (AMR) Engine",
+    description: "Path-planning architecture utilizing A* and Ant Colony Optimization algorithms. Built to navigate dynamic environments with real-time obstacle avoidance.",
+    tech: [
+      { name: "Python", icon: <SiPython /> },
+      { name: "C++", icon: <SiCplusplus /> },
+      { name: "Algorithms", icon: null } // Fallback for concepts without logos
+    ],
+    image: "/images/robotics-navigation.png", 
+    githubUrl: "https://github.com/yourusername/amr-path-planning",
+    liveUrl: "#",
+  },
+  {
+    title: "Collaborative Trip Planner",
+    description: "A full-stack web application allowing multiple users to collaboratively plan itineraries, vote on destinations, and manage budgets in real-time.",
+    tech: [
+      { name: "React", icon: <SiReact /> },
+      { name: "Node.js", icon: <SiNodedotjs /> },
+      { name: "Express", icon: <SiExpress /> },
+      { name: "MongoDB", icon: <SiMongodb /> }
+    ],
+    image: "/images/trip-planner-ui.png",
+    githubUrl: "https://github.com/yourusername/trip-planner",
+    liveUrl: "https://your-trip-planner.vercel.app",
+  },
+  {
+    title: "Sustainable Agriculture ML Model",
+    description: "Predictive machine learning pipeline that analyzes soil metrics, rainfall, and climate data to recommend optimal crop rotation strategies.",
+    tech: [
+      { name: "Python", icon: <SiPython /> },
+      { name: "Scikit-Learn", icon: <SiScikitlearn /> },
+      { name: "Pandas", icon: <SiPandas /> },
+      { name: "FastAPI", icon: <SiFastapi /> }
+    ],
+    image: "/images/agri-ml-dashboard.png",
+    githubUrl: "https://github.com/yourusername/sustainable-agriculture-ml",
+    liveUrl: "#",
+  },
+  {
+    title: "Interactive Blog Architecture",
+    description: "High-performance blogging platform featuring rich-text editing, secure user authentication, and an optimized PostgreSQL database layer.",
+    tech: [
+      { name: "Next.js", icon: <SiNextdotjs /> },
+      { name: "TypeScript", icon: <SiTypescript /> },
+      { name: "Tailwind", icon: <SiTailwindcss /> },
+      { name: "PostgreSQL", icon: <SiPostgresql /> }
+    ],
+    image: "/images/blog-backend-system.png",
+    githubUrl: "https://github.com/yourusername/blog-platform",
+    liveUrl: "https://your-blog.vercel.app",
+  }
+];
+
+export default function Works() {
+  return (
+    <section id="projects" className="w-full bg-[#0d1117] py-24 px-6 sm:px-8 md:px-16 font-onest">
+      <div className="max-w-6xl mx-auto flex flex-col">
+        
+        {/* ============================== */}
+        {/* SECTION HEADER                 */}
+        {/* ============================== */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 border-b border-slate-800/60 pb-6 gap-4">
+          <div>
+            <h2 className="text-3xl md:text-4xl font-mono font-bold text-slate-200 flex items-center">
+              <span className="text-cyan-500 mr-4 tracking-tighter">{`//`}</span>
+              Featured Works
+            </h2>
+          </div>
+          <Link 
+            to="/works" 
+            className="text-cyan-400 font-mono text-sm hover:text-cyan-300 transition-colors flex items-center gap-2 group"
+          >
+            View Full Archive
+            <span className="group-hover:translate-x-1 transition-transform">→</span>
+          </Link>
+        </div>
+
+        {/* ============================== */}
+        {/* PROJECT GRID                   */}
+        {/* ============================== */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {featuredProjects.map((project, index) => (
+            <div 
+              key={index} 
+              className="bg-[#11161d] border border-slate-800/60 rounded-2xl overflow-hidden group hover:border-cyan-500/30 transition-all duration-300 shadow-lg flex flex-col"
+            >
+              
+              {/* Project Image Container */}
+              <div className="w-full aspect-video overflow-hidden relative bg-slate-900 border-b border-slate-800/60">
+                <img 
+                  src={project.image} 
+                  alt={project.title} 
+                  className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out"
+                  onError={(e) => { e.target.style.display = 'none' }} 
+                />
+                <div className="absolute inset-0 bg-cyan-900/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+              </div>
+
+              {/* Project Details */}
+              <div className="p-6 md:p-8 flex flex-col flex-grow">
+                
+                {/* Title & Links Row */}
+                <div className="flex items-start justify-between gap-4 mb-4">
+                  <h3 className="text-xl md:text-2xl font-bold text-slate-100 group-hover:text-cyan-400 transition-colors duration-300">
+                    {project.title}
+                  </h3>
+                  
+                  <div className="flex items-center gap-3 text-slate-400">
+                    {project.githubUrl !== "#" && (
+                      <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="hover:text-cyan-400 transition-colors">
+                        <SiGithub className="w-5 h-5" />
+                      </a>
+                    )}
+                    {project.liveUrl !== "#" && (
+                      <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="hover:text-cyan-400 transition-colors">
+                        <FiExternalLink className="w-5 h-5" />
+                      </a>
+                    )}
+                  </div>
+                </div>
+
+                {/* Description */}
+                <p className="text-slate-400 text-sm md:text-base leading-relaxed mb-8 flex-grow">
+                  {project.description}
+                </p>
+
+                {/* Tech Stack Pills (Now with SimpleIcons!) */}
+                <div className="flex flex-wrap gap-2 mt-auto">
+                  {project.tech.map((tech, techIndex) => (
+                    <span 
+                      key={techIndex} 
+                      className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-mono text-cyan-400 bg-cyan-950/20 border border-cyan-900/40 rounded-md shadow-sm"
+                    >
+                      {/* Render icon if it exists, sized perfectly for the pill */}
+                      {tech.icon && React.cloneElement(tech.icon, { className: "w-3.5 h-3.5" })}
+                      {tech.name}
+                    </span>
+                  ))}
+                </div>
+
+              </div>
+            </div>
+          ))}
+        </div>
+
+      </div>
+    </section>
+  );
+}
