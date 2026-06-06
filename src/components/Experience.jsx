@@ -3,73 +3,56 @@ import React from "react";
 // --- Data: Work Experience ---
 const experiences = [
   {
-    role: "Full Stack Developer",
-    company: "Independent Projects",
-    date: "Jan 2024 - Present",
+    role: "Remote Intern ",
+    company: "Shell Foundation India , AICTE",
+    date: "August '25 - October '25",
     bullets: [
-      "Engineer interactive web applications and scalable blog architectures utilizing the complete MERN stack.",
-      "Deploy and maintain production environments utilizing Vercel for seamless continuous integration and delivery.",
-      "Developed a collaborative trip planner featuring complex state management and responsive UI components."
+      "Developed an ML model.",
+      "Sustainable Agriculture which detects the most suitable fruit as per the soil condition in a particular area. ",
+      "Deploy and maintain production environments utilizing Vercel for seamless continuous integration and delivery."
     ]
   },
   {
-    role: "Undergraduate Researcher (Robotics & ML)",
-    company: "Netaji Subhas University of Technology",
-    date: "Aug 2023 - Present",
+    role: "Fullstack Developer",
+    company: "Swasthya24x7.com",
+    date: "Aug '23 - Sept '24",
     bullets: [
-      "Study and implement path-planning algorithms including A* and Ant Colony Optimization for Autonomous Mobile Robots (AMRs).",
-      "Model complex robotic arm kinematics utilizing Denavit-Hartenberg (DH) parameters.",
-      "Develop predictive machine learning models for sustainable agriculture using Python, analyzing large datasets for crop recommendations."
+      "SEO backed development of the web app for health and lifestyle themes.",
+      "Successfully increased the growth by about 1.5 times",
     ]
   },
   {
     role: "Freelance Visual Designer",
-    company: "Upwork",
+    company: "Upwork, Fiverr",
     date: "Mar 2023 - Present",
     bullets: [
-      "Design and deliver high-converting visual assets and YouTube thumbnails, specializing in the gaming niche.",
+      "Design and deliver high-converting visual assets and illustrations, specializing in the gaming niche.",
       "Collaborate directly with international clients to iterate on channel branding and visual identity.",
       "Maintain a consistent top-rated professional profile, managing multiple project pipelines and client communications simultaneously."
     ]
   }
 ];
-
-// --- Data: Open Source Contributions ---
+// open source contribution
 const openSourceContributions = [
   {
-    repo: "facebook/react",
-    description: "Improved performance of useMemo hook by optimizing dependency array comparison.",
-    stars: "220k",
-    forks: "45k"
+    repo: "Chandu6702/Anime-Ecstasy",
+    description: "Improved performance of the project listed under GSSOC '25. Fixed Navabar and UI for the site .",
+    stars: "20",
+    forks: "62"
   },
   {
-    repo: "expressjs/express",
-    description: "Added support for custom response class serialization in dependency injection.",
-    stars: "65k",
-    forks: "14k"
+    repo: "firstcontributions",
+    description: "Improved the SEO for the open source project, improved the overall grid structure .Added support for Readme translation in various languages.",
+    stars: "54.3k",
+    forks: "104k"
   },
-  {
-    repo: "scikit-learn/scikit-learn",
-    description: "Fixed a race condition in the predictive model scheduler affecting data aggregation logic.",
-    stars: "60k",
-    forks: "25k"
-  },
-  {
-    repo: "redis/redis",
-    description: "Contributed documentation improvements and architectural examples for Redis Streams.",
-    stars: "65k",
-    forks: "23k"
-  }
 ];
 
 export default function Experience() {
   return (
     <section id="experience" className="w-full bg-[#0d1117] py-24 px-6 sm:px-8 md:px-16 font-onest">
       <div className="max-w-4xl mx-auto flex flex-col">
-        
-        {/* ============================== */}
-        {/* PART 1: EXPERIENCE TIMELINE    */}
-        {/* ============================== */}
+        {/* timeline */}
         <div className="mb-12 border-b border-slate-800/60 pb-4">
           <h2 className="text-3xl md:text-4xl font-mono font-bold text-slate-200 flex items-center">
             <span className="text-cyan-500 mr-4 tracking-tighter">{`//`}</span>
@@ -81,7 +64,7 @@ export default function Experience() {
           {experiences.map((exp, index) => (
             <div key={index} className="relative pl-8 md:pl-12 group">
               {/* Glowing Timeline Dot */}
-              <div className="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-cyan-500 shadow-[0_0_12px_rgba(6,182,212,0.8)] border-4 border-[#0d1117] group-hover:bg-white group-hover:shadow-[0_0_12px_rgba(255,255,255,0.8)] transition-all duration-300 z-10" />
+              <div className="absolute -left-2.25 top-1.5 w-4 h-4 rounded-full bg-cyan-500 shadow-[0_0_12px_rgba(6,182,212,0.8)] border-4 border-[#0d1117] group-hover:bg-white group-hover:shadow-[0_0_12px_rgba(255,255,255,0.8)] transition-all duration-300 z-10" />
 
               {/* Experience Card */}
               <div className="bg-[#11161d] border border-slate-800/60 rounded-xl p-6 md:p-8 hover:border-cyan-500/30 transition-colors duration-300 shadow-lg">
@@ -117,10 +100,6 @@ export default function Experience() {
             </div>
           ))}
         </div>
-
-        {/* ============================== */}
-        {/* PART 2: OPEN SOURCE GRID       */}
-        {/* ============================== */}
         <div className="mt-32 w-full">
           {/* Centered Header block */}
           <div className="text-center mb-12">
