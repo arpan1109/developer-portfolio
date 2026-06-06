@@ -15,7 +15,11 @@ import {
   SiNextdotjs,
   SiTypescript,
   SiTailwindcss,
-  SiPostgresql
+  SiPostgresql,
+  SiVercel,
+  SiMailgun,
+  SiMailtrap,
+  SiGooglegemini
 } from "react-icons/si";
 // SimpleIcons only has brands, so we use a standard Feather icon for the "Live Preview" arrow
 import { FiExternalLink } from "react-icons/fi";
@@ -23,29 +27,31 @@ import { FiExternalLink } from "react-icons/fi";
 // Projects updated with their respective SimpleIcons
 const featuredProjects = [
   {
-    title: "Autonomous Mobile Robot (AMR) Engine",
-    description: "Path-planning architecture utilizing A* and Ant Colony Optimization algorithms. Built to navigate dynamic environments with real-time obstacle avoidance.",
+    title: "Client Design Portfolio",
+    description: "A sleek and modern Graphic Design Portfolio for my client",
     tech: [
-      { name: "Python", icon: <SiPython /> },
-      { name: "C++", icon: <SiCplusplus /> },
-      { name: "Algorithms", icon: null } // Fallback for concepts without logos
+      { name: "React", icon: <SiReact /> },
+      { name: "Vercel", icon: <SiVercel /> },
     ],
     image: "/images/robotics-navigation.png", 
-    githubUrl: "https://github.com/yourusername/amr-path-planning",
-    liveUrl: "#",
+    githubUrl: "https://github.com/arpan1109/design-portfolio",
+    liveUrl: "https://devcreates4u.vercel.app/",
   },
   {
-    title: "Collaborative Trip Planner",
-    description: "A full-stack web application allowing multiple users to collaboratively plan itineraries, vote on destinations, and manage budgets in real-time.",
+    title: "Journeys",
+    description: "An Interactive MERN stack  web application allowing multiple users to collaboratively plan itineraries, vote on destinations, and manage budgets in real-time.It provides a secure session using JWT and BcryptJs and uses mailtrap for sending emails for various purposes like Welcome mails, Authentication mails. It also gives user freedom to plan journeys accrodingly an also guides their journeys by providing map, weather and additional info which makes their trip seamless.",
     tech: [
       { name: "React", icon: <SiReact /> },
       { name: "Node.js", icon: <SiNodedotjs /> },
       { name: "Express", icon: <SiExpress /> },
-      { name: "MongoDB", icon: <SiMongodb /> }
+      { name: "MongoDB", icon: <SiMongodb /> },
+      { name: "Mailrap", icon: <SiMailtrap /> },
+      { name: "Gemini API", icon: <SiGooglegemini /> }
+
     ],
     image: "/images/trip-planner-ui.png",
-    githubUrl: "https://github.com/yourusername/trip-planner",
-    liveUrl: "https://your-trip-planner.vercel.app",
+    githubUrl: "https://github.com/arpan1109/trip-planning",
+    liveUrl: "https://journeys-client.vercel.app/",
   },
   {
     title: "Sustainable Agriculture ML Model",
@@ -57,7 +63,7 @@ const featuredProjects = [
       { name: "FastAPI", icon: <SiFastapi /> }
     ],
     image: "/images/agri-ml-dashboard.png",
-    githubUrl: "https://github.com/yourusername/sustainable-agriculture-ml",
+    githubUrl: "https://github.com/arpan1109/sustainable-agriculture-ml",
     liveUrl: "#",
   },
   {
@@ -80,9 +86,6 @@ export default function Works() {
     <section id="projects" className="w-full bg-[#0d1117] py-24 px-6 sm:px-8 md:px-16 font-onest">
       <div className="max-w-6xl mx-auto flex flex-col">
         
-        {/* ============================== */}
-        {/* SECTION HEADER                 */}
-        {/* ============================== */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 border-b border-slate-800/60 pb-6 gap-4">
           <div>
             <h2 className="text-3xl md:text-4xl font-mono font-bold text-slate-200 flex items-center">
@@ -99,9 +102,6 @@ export default function Works() {
           </Link>
         </div>
 
-        {/* ============================== */}
-        {/* PROJECT GRID                   */}
-        {/* ============================== */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {featuredProjects.map((project, index) => (
             <div 
@@ -121,7 +121,7 @@ export default function Works() {
               </div>
 
               {/* Project Details */}
-              <div className="p-6 md:p-8 flex flex-col flex-grow">
+              <div className="p-6 md:p-8 flex flex-col grow">
                 
                 {/* Title & Links Row */}
                 <div className="flex items-start justify-between gap-4 mb-4">

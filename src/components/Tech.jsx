@@ -21,9 +21,6 @@ import {
   SiScikitlearn,
   SiMailtrap,
   SiJupyter,
-  // SiVisualstudiocode,
-  // Note: MATLAB is sometimes under SiMathworks depending on the react-icons version, 
-  // but the core stack below covers your exact layout seamlessly.
 } from "react-icons/si";
 
 // Organized directly from your reference image

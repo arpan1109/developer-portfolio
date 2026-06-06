@@ -5,16 +5,12 @@ export default function Footer() {
     <footer id="contact" className="w-full bg-[#0d1117] relative pt-24 pb-8 px-6 sm:px-8 md:px-16 font-mono">
       
       {/* Background Grid Pattern */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none"></div>
+      <div className="absolute inset-0"></div>
 
       <div className="max-w-4xl mx-auto relative z-10 flex flex-col items-center">
-        
-        {/* ============================== */}
-        {/* CONTACT CARD                   */}
-        {/* ============================== */}
+      {/* contact */}
         <div className="w-full bg-[#11161d] border border-slate-800/60 rounded-3xl p-10 md:p-16 text-center shadow-2xl flex flex-col items-center mb-20 relative overflow-hidden">
-          
-          {/* Subtle top glow on the card */}
+        
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-1 bg-cyan-500/20 blur-sm"></div>
 
           <h2 className="text-3xl md:text-5xl font-bold text-slate-100 tracking-tight mb-6 leading-tight">
@@ -29,7 +25,7 @@ export default function Footer() {
           {/* Main CTA Button */}
           <a 
             href="tel:+910000000000" // Replace with your actual phone number
-            className="bg-cyan-400 hover:bg-cyan-300 text-[#0d1117] font-bold px-8 py-4 rounded-lg flex items-center gap-3 transition-all duration-300 shadow-[0_0_20px_rgba(34,211,238,0.3)] hover:shadow-[0_0_30px_rgba(34,211,238,0.5)] transform hover:-translate-y-1"
+            className="bg-cyan-500 hover:bg-cyan-400 text-[#0d1117] font-bold px-8 py-4 rounded-lg flex items-center gap-3 transition-all duration-300 shadow-[0_0_20px_rgba(34,211,238,0.3)] hover:shadow-[0_0_30px_rgba(34,211,238,0.5)] transform hover:-translate-y-1"
           >
             {/* Envelope Icon */}
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
@@ -90,7 +86,7 @@ export default function Footer() {
           
           {/* Signature */}
           <div className="flex items-center">
-            Designed for <span className="text-cyan-400 ml-1 font-bold">impact .</span>
+            Designed for <span className="text-cyan-400 ml-1 font-bold">  &lt;impact /&gt;</span>
           </div>
           
         </div>
