@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
-// import { Button } from "@/components/ui/button";
 import { FileText, ArrowRight } from "lucide-react";
+import  hero from "../assets/hero.svg"
 
 export default function Hero() {
   return (
@@ -12,12 +12,12 @@ export default function Hero() {
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-cyan-500/40 to-transparent" />
 
       {/* Top row — label + availability */}
-      <div className="flex items-center justify-between w-full">
+      <div className="flex items-center justify-between text-zinc-400 w-full relative z-10">
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6 }}
-          className="font-mono text-xs text-muted-foreground uppercase tracking-[0.25em]"
+          className="font-mono text-xs md:text-sm text-muted-foreground uppercase tracking-widest"
         >
           Software Development Engineer
         </motion.p>
@@ -29,59 +29,83 @@ export default function Hero() {
           className="flex items-center gap-2 font-mono text-xs text-cyan-400 uppercase tracking-widest"
         >
           <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
-          Available now
+          <span className="hidden sm:inline">Available now</span>
         </motion.div>
       </div>
 
-      {/* Center — name */}
-      <div className="flex-1 flex flex-col justify-center">
-        <motion.h1
-          initial={{ opacity: 0, y: 32 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-          className="text-[clamp(3.5rem,12vw,9rem)] font-bold leading-[0.9] tracking-tighter text-white"
-        >
-          Alex
-          <br />
-          <span className="text-cyan-600">Chen.</span>
-        </motion.h1>
+      {/* Center — Two Column Layout (Text Left, SVG Right) */}
+      <div className="flex-1 flex flex-col lg:flex-row items-center justify-between w-full relative z-10 gap-12 lg:gap-8 mt-12 lg:mt-0">
+        {/* LEFT COLUMN: Text & Buttons */}
+        <div className="w-full lg:w-1/2 flex flex-col justify-center">
+          <motion.h1
+            initial={{ opacity: 0, y: 32 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+            className="text-[clamp(3.5rem,10vw,8rem)] font-bold leading-[1.05] tracking-tight text-white"
+          >
+            Arpan
+            <br />
+            <span className="text-cyan-500">Pal.</span>
+          </motion.h1>
 
-        <motion.p
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.45 }}
-          className="mt-10 max-w-md text-muted-foreground text-base md:text-lg leading-relaxed"
-        >
-          I build fast, scalable systems and clean interfaces.
-          <br />
-          Turning hard problems into simple, lasting solutions.
-        </motion.p>
+          <motion.p
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.45 }}
+            className="mt-8 max-w-md text-zinc-400 text-base md:text-lg leading-relaxed"
+          >
+            I build fast, scalable systems and clean interfaces.
+            <br />
+            Turning hard problems into simple, lasting solutions.
+          </motion.p>
 
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.65 }}
+            className="mt-10 flex flex-row items-center gap-4 sm:gap-6"
+          >
+            {/* Primary Button: My Works */}
+            <a
+              href="#projects"
+              className="group flex items-center gap-3 border border-slate-700 bg-[#0d1117] px-6 py-3.5 text-sm font-mono text-white hover:border-cyan-400 hover:text-cyan-400 hover:bg-cyan-950/20 transition-all duration-300"
+            >
+              My Works
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+            </a>
+
+            {/* Secondary Button: Resume */}
+            <a
+              href="/resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex items-center gap-2.5 px-2 py-3.5 text-sm font-mono text-slate-400 hover:text-white transition-colors duration-300"
+            >
+              <FileText className="w-4 h-4 group-hover:text-cyan-400 transition-colors duration-300" />
+              Resume
+            </a>
+          </motion.div>
+        </div>
+
+        {/* RIGHT COLUMN: The SVG Vector Image */}
         <motion.div
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.65 }}
-          className="mt-10 flex flex-row items-center gap-4"
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="w-full lg:w-1/2 flex justify-center lg:justify-end items-center mt-10 lg:mt-0"
         >
-          {/* <Button
-            size="lg"
-            className="gap-2 group font-mono rounded-none border border-white/80 bg-transparent text-white hover:bg-white hover:text-black transition-colors"
-            onClick={() =>
-              document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })
-            }
-          >
-            View My Work
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-          </Button>
-
-          <Button
-            size="lg"
-            variant="ghost"
-            className="gap-2 font-mono rounded-none text-muted-foreground hover:text-white hover:bg-transparent border border-transparent hover:border-white/20"
-          >
-            <FileText className="w-4 h-4" />
-            Resume
-          </Button> */}
+          {/* Floating Animation Wrapper */}
+          <motion.img
+            animate={{ y: [-15, 15, -15] }}
+            transition={{
+              duration: 6,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+            src={hero} // Pass the imported reference variable here
+            alt="Hero Vector Illustration"
+            className="w-full h-auto max-w-87.5 sm:max-w-100 lg:max-w-137.5 object-contain text-cyan-500 drop-shadow-[0_0_40px_rgba(34,211,238,0.15)]"
+          />
         </motion.div>
       </div>
 
@@ -90,20 +114,19 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.6, delay: 1 }}
-        className="flex items-end justify-between w-full"
+        className="flex items-end justify-between w-full text-zinc-200/50 relative z-10"
       >
-        <p className="font-mono text-xs text-muted-foreground/40 uppercase tracking-widest">
-          Portfolio — 2025
+        <p className="font-mono text-[10px] md:text-xs text-muted-foreground/40 uppercase tracking-widest">
+          Portfolio — 2026
         </p>
 
-        <div className="flex flex-col items-center gap-2">
-          <span className="font-mono text-[10px] text-muted-foreground/40 uppercase tracking-widest">Scroll</span>
-          <div className="w-px h-12 bg-gradient-to-b from-cyan-500/60 to-transparent" />
-        </div>
+
       </motion.div>
+
+      {/* Background Watermark */}
       <div
         aria-hidden
-        className="pointer-events-none absolute right-0 bottom-0 select-none text-[32vw] font-extrabold leading-none text-white/[0.02] tracking-tighter"
+        className="pointer-events-none absolute right-[-5%] bottom-10 select-none text-[25vw] lg:text-[20vw] font-extrabold leading-none text-white/[0.02] tracking-tighter"
       >
         {"</>"}
       </div>

@@ -1,1 +1,11 @@
 @import "tailwindcss";
+html {
+  scroll-behavior: smooth;
+}
+/* Hide default cursor on desktop screens only */
+/* Completely hide the default system cursor on desktop */
+@media (pointer: fine) {
+  *, *::before, *::after {
+    cursor: none !important;
+  }
+}
