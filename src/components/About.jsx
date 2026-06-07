@@ -8,10 +8,10 @@ export default function About() {
   return (
     <section
       id="about"
-      className="w-full bg-[#0d1117] py-24 px-6 sm:px-8 md:px-16 relative overflow-hidden"
+      className="w-full bg-[#0d1117] py-8  px-6 sm:px-8 md:px-16 relative overflow-hidden"
     >
       {/* Background ambient glow */}
-      <div className="absolute top-1/2 left-0 -translate-y-1/2 w-[500px] h-[500px] bg-cyan-900/10 blur-[120px] rounded-full pointer-events-none"></div>
+      <div className="absolute  top-1/2 left-0 -translate-y-1/2 w-[500px] h-[500px] bg-cyan-900/10 blur-[120px] rounded-full pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-16 items-center relative z-10">
         

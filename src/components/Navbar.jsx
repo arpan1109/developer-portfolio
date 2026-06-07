@@ -4,7 +4,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="w-full bg-[#0d1117] border-b border-slate-800 font-mono relative z-50">
+    <nav className="w-full bg-[#152742] border-b border-slate-800 font-mono relative z-50">
       {/* Background grid effect (Optional, matches the faint grid in your image) */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none"></div>
 
@@ -17,7 +17,7 @@ export default function Navbar() {
         </div>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center space-x-8 text-sm text-slate-400">
+        <div className="hidden md:flex items-center space-x-8 text-md text-zinc-200">
           <a href="#about" className="hover:text-cyan-400 transition-colors duration-300">About</a>
           <a href="#skills" className="hover:text-cyan-400 transition-colors duration-300">Skills</a>
           <a href="#projects" className="hover:text-cyan-400 transition-colors duration-300">Projects</a>
@@ -26,7 +26,7 @@ export default function Navbar() {
           {/* Contact Button */}
           <a 
             href="#contact" 
-            className="ml-2 px-5 py-2 rounded border border-cyan-700 text-slate-200 hover:bg-cyan-900/30 hover:border-cyan-400 hover:text-white transition-all duration-300"
+            className="ml-2 px-5 py-2 rounded border-3 border-cyan-600 text-slate-200 hover:bg-cyan-700/80 hover:border-cyan-300 hover:text-white transition-all duration-300"
           >
             Contact
           </a>

@@ -14,7 +14,11 @@ import {
   SiVercel,
   SiMailtrap,
   SiGooglegemini,
-  SiFramer
+  SiFramer,
+  SiJsonwebtokens,
+  SiPostman,
+  SiRockstargames,
+  SiNumpy
 } from "react-icons/si";
 // SimpleIcons only has brands, so we use a standard Feather icon for the "Live Preview" arrow
 import { FiExternalLink } from "react-icons/fi";
@@ -46,6 +50,8 @@ const featuredProjects = [
       { name: "Express", icon: <SiExpress /> },
       { name: "MongoDB", icon: <SiMongodb /> },
       { name: "Mailtrap", icon: <SiMailtrap /> },
+      { name: "JWT", icon: <SiJsonwebtokens /> },
+      { name: "Postman", icon: <SiPostman /> },
       { name: "Gemini API", icon: <SiGooglegemini /> }
     ],
     image: journeysImg, 
@@ -58,6 +64,7 @@ const featuredProjects = [
     tech: [
       { name: "Python", icon: <SiPython /> },
       { name: "Scikit-Learn", icon: <SiScikitlearn /> },
+      { name: "Numpy", icon: <SiNumpy /> },
       { name: "Pandas", icon: <SiPandas /> },
       { name: "FastAPI", icon: <SiFastapi /> }
     ],
@@ -82,8 +89,8 @@ const featuredProjects = [
 
 export default function Works() {
   return (
-    <section id="projects" className="w-full bg-[#0d1117] py-24 px-6 sm:px-8 md:px-16 font-onest">
-      <div className="max-w-6xl mx-auto flex flex-col">
+    <section id="projects" className="w-full bg-[#0d1117] py-14 px-6 sm:px-8 md:px-10 font-onest">
+      <div className="max-w-7xl mx-auto flex flex-col">
 
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 border-b border-slate-800/60 pb-6 gap-4">
           <div>
@@ -101,14 +108,11 @@ export default function Works() {
           </Link> */}
         </div>
 
-        {/* ============================== */}
-        {/* PROJECT CARDS GRID             */}
-        {/* ============================== */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {featuredProjects.map((project, index) => (
             <div 
               key={index} 
-              className="bg-[#11161d] border border-slate-800/60 rounded-2xl overflow-hidden group hover:border-cyan-500/30 transition-all duration-300 shadow-lg flex flex-col"
+              className="bg-[#11161d] border border-slate-200/40 rounded-2xl overflow-hidden group hover:border-cyan-500/30 transition-all duration-300 shadow-lg flex flex-col"
             >
               
               {/* Project Image Container */}
@@ -127,7 +131,7 @@ export default function Works() {
                   </div>
                 )}
                 {/* Overlay hover effect */}
-                <div className="absolute inset-0 bg-cyan-900/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+                <div className="absolute inset-0 bg-cyan-800/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
               </div>
 
               {/* Project Details */}

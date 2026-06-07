@@ -50,8 +50,8 @@ const openSourceContributions = [
 
 export default function Experience() {
   return (
-    <section id="experience" className="w-full bg-[#0d1117] py-24 px-6 sm:px-8 md:px-16 font-onest">
-      <div className="max-w-4xl mx-auto flex flex-col">
+    <section id="experience" className="w-full bg-[#0d1117] py-14 px-6 sm:px-8 md:px-16 font-onest">
+      <div className="max-w-6xl mx-auto flex flex-col">
         {/* timeline */}
         <div className="mb-12 border-b border-slate-800/60 pb-4">
           <h2 className="text-3xl md:text-4xl font-mono font-bold text-slate-200 flex items-center">

@@ -66,8 +66,8 @@ const techCategories = [
 
 export default function Tech() {
   return (
-    <section id="skills" className="w-full bg-[#0d1117] py-20 px-6 sm:px-8 md:px-16 font-onest">
-      <div className="max-w-5xl mx-auto flex flex-col gap-14">
+    <section id="skills" className="w-full bg-[#0d1117] py-10 px-6 sm:px-8 md:px-16 font-onest">
+      <div className="max-w-7xl mx-auto flex flex-col gap-14">
         
         {techCategories.map((category, index) => (
           <div key={index} className="flex flex-col">
@@ -81,11 +81,11 @@ export default function Tech() {
             </div>
 
             {/* Responsive Card Grid */}
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
               {category.items.map((item, itemIndex) => (
                 <div
                   key={itemIndex}
-                  className="bg-[#11161d] border border-slate-800/60 rounded-xl p-6 flex flex-col items-center justify-center gap-4 hover:border-cyan-500/40 hover:bg-[#141a23] transition-all duration-300 group cursor-default shadow-md hover:shadow-cyan-900/10"
+                  className="bg-[#11161d] border border-slate-800/60 rounded-xl p-4 flex flex-col items-center justify-center gap-4 hover:border-cyan-500/40 hover:bg-[#141a23] transition-all duration-300 group cursor-default shadow-md hover:shadow-cyan-900/10"
                 >
                   {/* Icon Wrapper */}
                   <div className="text-slate-400 group-hover:text-cyan-400 transition-colors duration-300 flex items-center justify-center">

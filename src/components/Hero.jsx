@@ -1,15 +1,15 @@
 import { motion } from "framer-motion";
 import { FileText, ArrowRight } from "lucide-react";
-import  hero from "../assets/hero.svg"
+import hero from "../assets/hero.svg";
 
 export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex flex-col justify-between bg-[#08090a] px-6 md:px-16 lg:px-24 pt-32 pb-12 overflow-hidden"
+      className="relative min-h-screen flex flex-col justify-between bg-[#08090a] px-6 md:px-16 lg:px-18 pt-12 pb-12 overflow-hidden"
     >
       {/* Thin top accent line */}
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-cyan-500/40 to-transparent" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-cyan-500/40 to-transparent" />
 
       {/* Top row — label + availability */}
       <div className="flex items-center justify-between text-zinc-400 w-full relative z-10">
@@ -41,11 +41,11 @@ export default function Hero() {
             initial={{ opacity: 0, y: 32 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="text-[clamp(3.5rem,10vw,8rem)] font-bold leading-[1.05] tracking-tight text-white"
+            className="text-[clamp(3.5rem,10vw,8rem)] font-bold leading-[1.15] tracking-tight text-white"
           >
             Arpan
             <br />
-            <span className="text-cyan-500">Pal.</span>
+            <span className="text-cyan-500 py-2">Pal.</span>
           </motion.h1>
 
           <motion.p
@@ -75,15 +75,17 @@ export default function Hero() {
             </a>
 
             {/* Secondary Button: Resume */}
-            <a
-              href="/resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group flex items-center gap-2.5 px-2 py-3.5 text-sm font-mono text-slate-400 hover:text-white transition-colors duration-300"
-            >
-              <FileText className="w-4 h-4 group-hover:text-cyan-400 transition-colors duration-300" />
-              Resume
-            </a>
+            <div className="px-1 rounded border-3 border-cyan-600 text-slate-200 hover:bg-cyan-700/80 hover:border-cyan-300 hover:text-white transition-all duration-300">
+              <a
+                href="/resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center gap-2.5 px-2 py-3.5 text-sm font-mono text-slate-400 hover:text-white transition-colors duration-300"
+              >
+                <FileText className="w-4 h-4 group-hover:text-cyan-400 transition-colors duration-300" />
+                Resume
+              </a>
+            </div>
           </motion.div>
         </div>
 
@@ -114,22 +116,12 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.6, delay: 1 }}
-        className="flex items-end justify-between w-full text-zinc-200/50 relative z-10"
+        className="flex items-end justify-between w-full text-zinc-200 relative z-10"
       >
         <p className="font-mono text-[10px] md:text-xs text-muted-foreground/40 uppercase tracking-widest">
           Portfolio — 2026
         </p>
-
-
       </motion.div>
-
-      {/* Background Watermark */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute right-[-5%] bottom-10 select-none text-[25vw] lg:text-[20vw] font-extrabold leading-none text-white/[0.02] tracking-tighter"
-      >
-        {"</>"}
-      </div>
     </section>
   );
 }
