@@ -13,7 +13,6 @@ import {
   SiBootstrap,
   SiMongodb,
   SiMysql,
-  // SiMailtrap,
   SiGit,
   SiGithub,
   SiNumpy,
@@ -26,48 +25,50 @@ import {
 // Organized directly from your reference image
 const techCategories = [
   {
-    title: "Languages",
+    title: "Languages & Styling",
     items: [
-      { name: "C++", icon: <SiCplusplus className="w-10 h-10" /> },
-      { name: "Python", icon: <SiPython className="w-10 h-10" /> },
-      { name: "JavaScript", icon: <SiJavascript className="w-10 h-10" /> },
-      { name: "TypeScript", icon: <SiTypescript className="w-10 h-10" /> },
-      { name: "HTML5", icon: <SiHtml5 className="w-10 h-10" /> },
-      { name: "CSS3", icon: <SiCss className="w-10 h-10" /> },
-      { name: "TailwindCSS", icon: <SiTailwindcss className="w-10 h-10" /> },
-      { name: "Bootstrap", icon: <SiBootstrap className="w-10 h-10" /> },
+      { name: "C++", icon: <SiCplusplus className="w-8 h-8 sm:w-10 sm:h-10" /> },
+      { name: "Python", icon: <SiPython className="w-8 h-8 sm:w-10 sm:h-10" /> },
+      { name: "JavaScript", icon: <SiJavascript className="w-8 h-8 sm:w-10 sm:h-10" /> },
+      { name: "TypeScript", icon: <SiTypescript className="w-8 h-8 sm:w-10 sm:h-10" /> },
+      { name: "HTML5", icon: <SiHtml5 className="w-8 h-8 sm:w-10 sm:h-10" /> },
+      { name: "CSS3", icon: <SiCss className="w-8 h-8 sm:w-10 sm:h-10" /> },
+      { name: "TailwindCSS", icon: <SiTailwindcss className="w-8 h-8 sm:w-10 sm:h-10" /> },
+      { name: "Bootstrap", icon: <SiBootstrap className="w-8 h-8 sm:w-10 sm:h-10" /> },
     ],
   },
   {
     title: "Frameworks & Libraries",
     items: [
-      { name: "React", icon: <SiReact className="w-10 h-10" /> },
-      { name: "Node.js", icon: <SiNodedotjs className="w-10 h-10" /> },
-      { name: "Express", icon: <SiExpress className="w-10 h-10" /> },
-      { name: "Tailwind CSS", icon: <SiTailwindcss className="w-10 h-10" /> },
-      { name: "Scikit-learn", icon: <SiScikitlearn className="w-10 h-10" /> },
-      { name: "Numpy", icon: <SiNumpy className="w-10 h-10" /> },
-      { name: "Pandas", icon: <SiPandas className="w-10 h-10" /> },
+      { name: "React", icon: <SiReact className="w-8 h-8 sm:w-10 sm:h-10" /> },
+      { name: "Node.js", icon: <SiNodedotjs className="w-8 h-8 sm:w-10 sm:h-10" /> },
+      { name: "Express", icon: <SiExpress className="w-8 h-8 sm:w-10 sm:h-10" /> },
+      { name: "Scikit-learn", icon: <SiScikitlearn className="w-8 h-8 sm:w-10 sm:h-10" /> },
+      { name: "Numpy", icon: <SiNumpy className="w-8 h-8 sm:w-10 sm:h-10" /> },
+      { name: "Pandas", icon: <SiPandas className="w-8 h-8 sm:w-10 sm:h-10" /> },
     ],
   },
   {
     title: "Tools & Infrastructure",
     items: [
-      { name: "MongoDB", icon: <SiMongodb className="w-10 h-10" /> },
-      { name: "MySQL", icon: <SiMysql className="w-10 h-10" /> },
-      { name: "Git", icon: <SiGit className="w-10 h-10" /> },
-      { name: "GitHub", icon: <SiGithub className="w-10 h-10" /> },
-      { name: "Jupyter", icon: <SiJupyter className="w-10 h-10" /> },
-      { name: "Mailtrap", icon: <SiMailtrap className="w-10 h-10" /> },
-      // { name: "VS Code", icon: <SiVisualstudiocode className="w-10 h-10" /> },
+      { name: "MongoDB", icon: <SiMongodb className="w-8 h-8 sm:w-10 sm:h-10" /> },
+      { name: "MySQL", icon: <SiMysql className="w-8 h-8 sm:w-10 sm:h-10" /> },
+      { name: "Git", icon: <SiGit className="w-8 h-8 sm:w-10 sm:h-10" /> },
+      { name: "GitHub", icon: <SiGithub className="w-8 h-8 sm:w-10 sm:h-10" /> },
+      { name: "Jupyter", icon: <SiJupyter className="w-8 h-8 sm:w-10 sm:h-10" /> },
+      { name: "Mailtrap", icon: <SiMailtrap className="w-8 h-8 sm:w-10 sm:h-10" /> },
     ],
   },
 ];
 
 export default function Tech() {
   return (
-    <section id="skills" className="w-full bg-[#0d1117] py-10 px-6 sm:px-8 md:px-16 font-onest">
-      <div className="max-w-7xl mx-auto flex flex-col gap-14">
+    <section 
+      id="skills" 
+      // Adjusted padding to px-6 sm:px-12 md:px-16 to guarantee structural consistency with your About page layouts
+      className="w-full bg-[#0d1117] py-8 px-6 sm:px-12 md:px-16 font-onest overflow-hidden"
+    >
+      <div className="max-w-6xl mx-auto flex flex-col gap-12 sm:gap-14">
         
         {techCategories.map((category, index) => (
           <div key={index} className="flex flex-col">
@@ -80,20 +81,21 @@ export default function Tech() {
               </h3>
             </div>
 
-            {/* Responsive Card Grid */}
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
+            {/* Responsive Card Grid with explicit breakdown columns */}
+            {/* grid-cols-2 for small viewports, xs:grid-cols-3 for 480px devices, scaling to sm/md/lg widths seamlessly */}
+            <div className="grid grid-cols-2 xs:grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-4">
               {category.items.map((item, itemIndex) => (
                 <div
                   key={itemIndex}
-                  className="bg-[#11161d] border border-slate-800/60 rounded-xl p-4 flex flex-col items-center justify-center gap-4 hover:border-cyan-500/40 hover:bg-[#141a23] transition-all duration-300 group cursor-default shadow-md hover:shadow-cyan-900/10"
+                  className="bg-[#11161d] border border-slate-800/60 rounded-xl p-4 sm:p-5 flex flex-col items-center justify-center gap-3 sm:gap-4 hover:border-cyan-500/40 hover:bg-[#141a23] transition-all duration-300 group cursor-default shadow-md hover:shadow-cyan-900/10"
                 >
-                  {/* Icon Wrapper */}
+                  {/* Icon Wrapper scaling smoothly along with viewport boundaries */}
                   <div className="text-slate-400 group-hover:text-cyan-400 transition-colors duration-300 flex items-center justify-center">
                     {item.icon}
                   </div>
                   
                   {/* Technology Label */}
-                  <span className="text-sm font-semibold text-slate-300 group-hover:text-white transition-colors duration-300 text-center">
+                  <span className="text-xs sm:text-sm font-semibold text-slate-300 group-hover:text-white transition-colors duration-300 text-center">
                     {item.name}
                   </span>
                 </div>
