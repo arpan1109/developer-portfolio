@@ -7,8 +7,7 @@ export default function About() {
   return (
     <section
       id="about"
-      // Changed px-4 to px-6 sm:px-12 md:px-16 to guarantee solid padding on the absolute smallest viewports
-      className="w-full bg-[#0d1117] py-10 md:py-24 px-6 sm:px-12 md:px-16 relative overflow-hidden"
+      className="w-full bg-[#0d1117] py-16 md:py-24 px-6 sm:px-12 md:px-16 relative overflow-hidden"
     >
       {/* Background ambient glow */}
       <div className="absolute top-1/2 left-0 -translate-y-1/2 w-[300px] sm:w-[500px] h-[300px] sm:h-[500px] bg-cyan-900/10 blur-[80px] sm:blur-[120px] rounded-full pointer-events-none"></div>
@@ -16,15 +15,23 @@ export default function About() {
       <div className="max-w-6xl mx-auto flex flex-col lg:flex-row gap-12 lg:gap-16 items-center relative z-10">
         
         {/* ================= LEFT COLUMN: Image & Badge ================= */}
-        {/* Added pr-4 (padding-right) on mobile to accommodate the absolute positioned badge so it never touches the screen edge */}
         <div className="w-full relative max-w-[280px] sm:max-w-md mx-auto lg:mx-0 pr-4 sm:pr-0">
           {/* Main Image Frame */}
           <div className="aspect-square w-full bg-[#111822] rounded-2xl border border-slate-800 shadow-2xl relative overflow-hidden flex items-center justify-center p-4">
+            
+            {/* STATIC ON MOBILE (No layout shifting or active frame calculation) */}
+            <img
+              src={about}
+              alt="About Vector Illustration"
+              className="block lg:hidden w-full h-auto max-w-[180px] sm:max-w-[280px] md:max-w-[320px] object-contain text-cyan-500 drop-shadow-[0_0_40px_rgba(34,211,238,0.15)]"
+            />
+
+            {/* FLOATING ON DESKTOP */}
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="w-full flex justify-center items-center"
+              className="hidden lg:flex w-full justify-center items-center"
             >
               <motion.img
                 animate={{ y: [-10, 10, -10] }}
@@ -35,13 +42,12 @@ export default function About() {
                 }}
                 src={about}
                 alt="About Vector Illustration"
-                className="w-full h-auto max-w-[180px] sm:max-w-[280px] md:max-w-[320px] lg:max-w-[380px] object-contain text-cyan-500 drop-shadow-[0_0_40px_rgba(34,211,238,0.15)]"
+                className="w-full h-auto max-w-[380px] object-contain text-cyan-500 drop-shadow-[0_0_40px_rgba(34,211,238,0.15)]"
               />
             </motion.div>
           </div>
 
           {/* Floating <Developer /> Badge */}
-          {/* Adjusted positioning from -right-4 to right-0 on mobile so it stays tucked cleanly inside the container bounds */}
           <div className="absolute -bottom-4 right-0 sm:-right-5 bg-[#0d1117] border border-slate-700/80 px-4 sm:px-5 py-2.5 sm:py-3 rounded-lg shadow-[0_8px_30px_rgb(0,0,0,0.5)] flex items-center gap-2">
             <span className="text-cyan-400 font-mono text-xs sm:text-sm tracking-wide font-medium">
               &lt;Developer /&gt;
