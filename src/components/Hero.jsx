@@ -106,7 +106,7 @@ export default function Hero() {
             }}
             src={hero}
             alt="Hero Vector Illustration"
-            className="w-full h-auto max-w-[260px] sm:max-w-[320px] md:max-w-[380px] lg:max-w-[480px] xl:max-w-[520px] object-contain drop-shadow-[0_0_50px_rgba(34,211,238,0.12)]"
+            className="w-full h-auto max-w-65 sm:max-w-[320px] md:max-w-95 lg:max-w-120 xl:max-w-130 object-contain drop-shadow-[0_0_50px_rgba(34,211,238,0.12)]"
           />
         </motion.div>
       </div>
@@ -116,9 +116,9 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.6, delay: 1 }}
-        className="flex items-end justify-between w-full text-zinc-500 relative z-10 pt-4"
+        className="flex items-end justify-between w-full text-zinc-400 relative z-10 pt-4"
       >
-        <p className="font-mono text-[10px] md:text-xs tracking-[0.2em] uppercase opacity-60">
+        <p className="font-mono text-[10px] md:text-xs tracking-[0.2em] uppercase">
           Portfolio — 2026
         </p>
       </motion.div>

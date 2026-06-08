@@ -7,13 +7,13 @@ export default function Footer() {
   return (
     <footer
       id="contact"
-      className="w-full bg-[#0d1117] relative pt-24 pb-8 px-6 sm:px-8 md:px-16 font-mono"
+      className="w-full bg-[#0d1117] relative pt-1 pb-8 px-6 sm:px-8 md:px-16 font-mono"
     >
       {/* Background Grid Pattern */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-size-[24px_24px] pointer-events-none"></div>
 
       <div className="max-w-4xl mx-auto relative z-10 flex flex-col items-center">
-        <div className="w-full bg-[#11161d] border border-slate-800/60 rounded-3xl p-10 md:p-16 text-center shadow-2xl flex flex-col items-center mb-20 relative overflow-hidden">
+        <div className="w-full mt-4 lg:mt-20 bg-[#11161d] border border-slate-500/60 rounded-3xl p-10 md:p-16 text-center shadow-2xl flex flex-col items-center mb-20 relative overflow-hidden">
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-1 bg-cyan-500/20 blur-sm"></div>
 
           <h2 className="text-3xl md:text-5xl font-bold text-slate-100 tracking-tight mb-6 leading-tight">

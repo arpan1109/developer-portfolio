@@ -38,7 +38,7 @@ const experiences = [
 // --- Data: Open Source ---
 const openSourceContributions = [
   {
-    repo: "Chandu6702/Anime-Ecstasy",
+    repo: "Anime-Ecstasy",
     description: "Improved performance of the project listed under GSSOC '25. Fixed Navbar and UI for the site.",
     stars: "20",
     forks: "62"
@@ -106,11 +106,7 @@ export default function Experience() {
             </div>
           ))}
         </div>
-
-        {/* ============================== */}
-        {/* OPEN SOURCE SECTION            */}
-        {/* ============================== */}
-        <div className="mt-24 md:mt-32 w-full">
+        <div className="mt-14 sm:mt-8 md:mt-32 w-full">
           <div className="text-center mb-12 px-4">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-mono font-bold text-slate-100 tracking-tight mb-4">
               <span className="text-cyan-500 mr-2 sm:mr-4 font-normal">&gt;</span>
